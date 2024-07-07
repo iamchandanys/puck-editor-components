@@ -7,16 +7,24 @@
   "author": "Chandan Kumar Y S",
   "license": "ISC",
   "scripts": {
-    "build": "babel src --out-dir outputs"
+    "build:npm": "babel src --out-dir outputs",
+    "build:run": "webpack --mode production"
   },
   "dependencies": {
+    "@measured/puck": "^0.15.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.24.7",
     "@babel/core": "^7.24.7",
+    "@babel/plugin-transform-modules-commonjs": "^7.24.7",
+    "@babel/plugin-transform-runtime": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
-    "@babel/preset-react": "^7.24.7"
+    "@babel/preset-react": "^7.24.7",
+    "babel-loader": "^9.1.3",
+    "path": "^0.12.7",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
   }
 }
