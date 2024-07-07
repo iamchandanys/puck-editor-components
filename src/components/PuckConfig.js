@@ -1,3 +1,8 @@
+import React from "react";
+import ViWithHeading from "./ViWithHeading";
+import InsuranceTypes from "./InsuranceTypes";
+import FeaturesListCard from "./FeaturesListCard";
+
 const PuckConfig = {
   components: {
     ViWithHeadingBlock: {
@@ -27,10 +32,103 @@ const PuckConfig = {
         bannerImg:
           "https://codesnippet.blob.core.windows.net/store-images/5d8876c20e57bf6e470a6cca699c67f2.png",
       },
-      render: () => {
+      render: ({
+        title,
+        description,
+        allProductsBtn,
+        advisorBtn,
+        bannerImg,
+      }) => {
         return (
           <>
-            <>Testing 1</>
+            <ViWithHeading
+              title={title}
+              description={description}
+              allProductsBtn={allProductsBtn}
+              advisorBtn={advisorBtn}
+              bannerImg={bannerImg}
+            ></ViWithHeading>
+          </>
+        );
+      },
+    },
+    InsuranceTypeBlock: {
+      fields: {
+        title: {
+          type: "text",
+        },
+        description: {
+          type: "textarea",
+        },
+        items: {
+          type: "array",
+          arrayFields: {
+            title: { type: "text" },
+            description: { type: "text" },
+          },
+          defaultItemProps: {
+            title: "Lorem ipsum",
+            description:
+              "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+          },
+        },
+      },
+      defaultProps: {
+        title: "What are you looking for? Can we help?",
+        description:
+          "Here we focus on markets where creativity and innovation can unlock long-term value and growth.",
+        items: [
+          {
+            title: "LIFE COVER",
+            description:
+              "Collaborate seamlessly with all  the organization and hit your marketing goals every month with our marketing plan.",
+          },
+        ],
+      },
+      render: ({ title, description, items }) => {
+        return (
+          <InsuranceTypes
+            title={title}
+            description={description}
+            items={items}
+          ></InsuranceTypes>
+        );
+      },
+    },
+    FeaturesListCardBlock: {
+      fields: {
+        title: {
+          type: "text",
+        },
+        description: {
+          type: "textarea",
+        },
+        items: {
+          type: "array",
+          arrayFields: {
+            title: { type: "text" },
+            description: { type: "text" },
+          },
+          defaultItemProps: {
+            title: "Lorem ipsum",
+            description:
+              "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+          },
+        },
+      },
+      defaultProps: {
+        title: "Insurance to help you get though life",
+        description:
+          "Here at Selekta we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.",
+      },
+      render: ({ title, description, items }) => {
+        return (
+          <>
+            <FeaturesListCard
+              title={title}
+              description={description}
+              items={items}
+            ></FeaturesListCard>
           </>
         );
       },

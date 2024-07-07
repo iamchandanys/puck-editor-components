@@ -1,8 +1,8 @@
-const InsuranceTypes = require("./output/components/InsuranceTypes").default;
+const InsuranceTypes = require("./outputs/components/InsuranceTypes").default;
 const FeaturesListCard =
-  require("./output/components/FeaturesListCard").default;
-const ViWithHeading = require("./output/components/ViWithHeading").default;
-const PuckConfig = require("./output/components/PuckConfig").default;
+  require("./outputs/components/FeaturesListCard").default;
+const ViWithHeading = require("./outputs/components/ViWithHeading").default;
+const PuckConfig = require("./outputs/components/PuckConfig").default;
 
 module.exports = {
   InsuranceTypes,

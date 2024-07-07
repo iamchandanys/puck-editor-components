@@ -1,13 +1,13 @@
 {
   "name": "puck-editor-components",
-  "version": "1.0.18",
+  "version": "1.0.22",
   "description": "The components for puck editor",
   "main": "index.js",
   "types": "types/index.d.ts",
   "author": "Chandan Kumar Y S",
   "license": "ISC",
   "scripts": {
-    "build": "babel src --out-dir output"
+    "build": "babel src --out-dir outputs"
   },
   "dependencies": {
     "react": "^18.3.1",
