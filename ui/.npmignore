@@ -1,0 +1,14 @@
+node_modules
+src
+public
+pages
+styles
+webpack.config.js
+tsconfig.json
+next.config.js
+_backup
+postcss.config.mjs
+tailwind.config.ts
+next.config.mjs
+next-env.d.ts
+.eslintrc.json
