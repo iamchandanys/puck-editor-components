@@ -1,19 +1,19 @@
 import React from "react";
-
 import type { Config } from "@measured/puck";
-import { ViWithHeading } from "./ViWithHeading";
-import { InsuranceTypes } from "./InsuranceTypes";
-import { FeaturesListCard } from "./FeaturesListCard";
+import VisualImageWithHeading from "./VisualImageWithHeading";
+import DefaultFeatureList from "./DefaultFeatureList";
+import FeaturesListCard from "./FeaturesListCard";
 
 type Components = {
-  ViWithHeadingBlock: {};
-  InsuranceTypeBlock: {};
+  VisualImageWithHeadingBlock: {};
+  DefaultFeatureListBlock: {};
   FeaturesListCardBlock: {};
 };
 
 const PuckConfig: Config<Components> = {
   components: {
-    ViWithHeadingBlock: {
+    VisualImageWithHeadingBlock: {
+      label: "Visual Image With Heading",
       fields: {
         title: {
           type: "text",
@@ -32,13 +32,13 @@ const PuckConfig: Config<Components> = {
         },
       },
       defaultProps: {
-        title: "Buy Insurance you want in 5 minutes",
+        title: "Payments tool for software companies",
         description:
-          "From checkout to global sales tax compliance, companies around the world use Selekta to simplify their payment stack.",
-        allProductsBtn: "See all our Insurance Products",
-        advisorBtn: "Speak to an advisor",
+          "From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.",
+        allProductsBtn: "Get Started",
+        advisorBtn: "Speaks to Sales",
         bannerImg:
-          "https://codesnippet.blob.core.windows.net/store-images/5d8876c20e57bf6e470a6cca699c67f2.png",
+          "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png",
       },
       render: ({
         title,
@@ -49,18 +49,19 @@ const PuckConfig: Config<Components> = {
       }: any) => {
         return (
           <>
-            <ViWithHeading
+            <VisualImageWithHeading
               title={title}
               description={description}
               allProductsBtn={allProductsBtn}
               advisorBtn={advisorBtn}
               bannerImg={bannerImg}
-            ></ViWithHeading>
+            ></VisualImageWithHeading>
           </>
         );
       },
     },
-    InsuranceTypeBlock: {
+    DefaultFeatureListBlock: {
+      label: "Default Feature List",
       fields: {
         title: {
           type: "text",
@@ -82,28 +83,54 @@ const PuckConfig: Config<Components> = {
         },
       },
       defaultProps: {
-        title: "What are you looking for? Can we help?",
+        title: "Designed for business teams like yours",
         description:
-          "Here we focus on markets where creativity and innovation can unlock long-term value and growth.",
+          "Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.",
         items: [
           {
-            title: "LIFE COVER",
+            title: "Marketing",
             description:
-              "Collaborate seamlessly with all  the organization and hit your marketing goals every month with our marketing plan.",
+              "Plan it, create it, launch it. Collaborate seamlessly with all the organization and hit your marketing goals every month with our marketing plan.",
+          },
+          {
+            title: "Legal",
+            description:
+              "Protect your organization, devices and stay compliant with our structured workflows and custom permissions made for you.",
+          },
+          {
+            title: "Business Automation",
+            description:
+              "Auto-assign tasks, send Slack messages, and much more. Now power up with hundreds of new templates to help you get started.",
+          },
+          {
+            title: "Finance",
+            description:
+              "Audit-proof software built for critical financial operations like month-end close and quarterly budgeting.",
+          },
+          {
+            title: "Enterprise Design",
+            description:
+              "Craft beautiful, delightful experiences for both marketing and product with real cross-company collaboration.",
+          },
+          {
+            title: "Operations",
+            description:
+              "Keep your company’s lights on with customizable, iterative, and structured workflows built for all efficient teams and individual.",
           },
         ],
       },
       render: ({ title, description, items }: any) => {
         return (
-          <InsuranceTypes
+          <DefaultFeatureList
             title={title}
             description={description}
             items={items}
-          ></InsuranceTypes>
+          ></DefaultFeatureList>
         );
       },
     },
     FeaturesListCardBlock: {
+      label: "Features List Card",
       fields: {
         title: {
           type: "text",
@@ -125,9 +152,41 @@ const PuckConfig: Config<Components> = {
         },
       },
       defaultProps: {
-        title: "Insurance to help you get though life",
+        title: "Secure platform, secure data",
         description:
-          "Here at Selekta we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.",
+          "Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.",
+        items: [
+          {
+            title: "Marketing",
+            description:
+              "Plan it, create it, launch it. Collaborate seamlessly with all the organization and hit your marketing goals every month with our marketing plan.",
+          },
+          {
+            title: "Legal",
+            description:
+              "Protect your organization, devices and stay compliant with our structured workflows and custom permissions made for you.",
+          },
+          {
+            title: "Business Automation",
+            description:
+              "Auto-assign tasks, send Slack messages, and much more. Now power up with hundreds of new templates to help you get started.",
+          },
+          {
+            title: "Finance",
+            description:
+              "Audit-proof software built for critical financial operations like month-end close and quarterly budgeting.",
+          },
+          {
+            title: "Enterprise Design",
+            description:
+              "Craft beautiful, delightful experiences for both marketing and product with real cross-company collaboration.",
+          },
+          {
+            title: "Operations",
+            description:
+              "Keep your company’s lights on with customizable, iterative, and structured workflows built for all efficient teams and individual.",
+          },
+        ],
       },
       render: ({ title, description, items }: any) => {
         return (

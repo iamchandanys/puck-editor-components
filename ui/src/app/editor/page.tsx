@@ -2,16 +2,29 @@
 
 import "@measured/puck/puck.css";
 import { Puck } from "@measured/puck";
-import { PuckConfig } from "../components/PuckConfig";
+import PuckConfig from "../components/PuckConfig";
+import { useState } from "react";
 
 export const Editor = () => {
-  const initialData = {};
+  const [initData, setInitData] = useState({});
 
-  const save = (data: any) => {};
+  const save = (data: any) => {
+    localStorage.setItem("initData", JSON.stringify(data));
+  };
 
-  const onChange = (data: any) => {};
+  const onChange = (data: any) => {
+    localStorage.setItem("initData", JSON.stringify(data));
+  };
 
-  const handleViewPage = () => {};
+  const handleClear = () => {
+    localStorage.removeItem("initData");
+    setInitData({});
+    window.location.reload();
+  };
+
+  const handleViewPage = () => {
+    window.open("/view", "_blank");
+  };
 
   const overrides = {
     headerActions: ({ children }: any) => (
@@ -24,6 +37,13 @@ export const Editor = () => {
         >
           View Page
         </button>
+        <button
+          type="button"
+          className="px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+          onClick={handleClear}
+        >
+          Clear
+        </button>
       </>
     ),
   };
@@ -32,7 +52,7 @@ export const Editor = () => {
     <>
       <Puck
         config={PuckConfig}
-        data={initialData}
+        data={initData}
         onPublish={save}
         overrides={overrides}
         onChange={(data: any) => {

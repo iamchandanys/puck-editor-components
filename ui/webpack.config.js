@@ -3,8 +3,11 @@ const path = require("path");
 module.exports = {
   mode: "production", // Set to 'development' or 'none' as needed
   entry: {
-    index: "./src/index.ts",
+    index: "./index.ts",
     PuckConfig: "./src/app/components/PuckConfig.tsx",
+    DefaultFeatureList: "./src/app/components/DefaultFeatureList.tsx",
+    FeaturesListCard: "./src/app/components/FeaturesListCard.tsx",
+    VisualImageWithHeading: "./src/app/components/VisualImageWithHeading.tsx",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
