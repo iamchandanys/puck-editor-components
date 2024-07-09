@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = {
   mode: "production", // Set to 'development' or 'none' as needed
   entry: {
-    index: "./src/app/components/index.ts",
+    index: "./src/index.ts",
     PuckConfig: "./src/app/components/PuckConfig.tsx",
   },
   output: {
