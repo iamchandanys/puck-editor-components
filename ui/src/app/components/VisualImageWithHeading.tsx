@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 
-interface ViWithHeadingProps {
+interface VisualImageWithHeadingProps {
   title: string;
   description: string;
   allProductsBtn: string;
@@ -9,8 +9,7 @@ interface ViWithHeadingProps {
   bannerImg: string;
 }
 
-// VI - Visual Image
-export const ViWithHeading: React.FC<ViWithHeadingProps> = ({
+const VisualImageWithHeading: React.FC<VisualImageWithHeadingProps> = ({
   title,
   description,
   allProductsBtn,
@@ -58,3 +57,5 @@ export const ViWithHeading: React.FC<ViWithHeadingProps> = ({
     </>
   );
 };
+
+export default VisualImageWithHeading;

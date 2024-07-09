@@ -6,7 +6,7 @@ interface FeaturesListCardProps {
   items: [];
 }
 
-export const FeaturesListCard: React.FC<FeaturesListCardProps> = ({
+const FeaturesListCard: React.FC<FeaturesListCardProps> = ({
   title,
   description,
   items,
@@ -58,3 +58,5 @@ export const FeaturesListCard: React.FC<FeaturesListCardProps> = ({
     </>
   );
 };
+
+export default FeaturesListCard;
