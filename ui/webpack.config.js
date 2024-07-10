@@ -1,9 +1,10 @@
 const path = require("path");
+const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
   mode: "production", // Set to 'development' or 'none' as needed
   entry: {
-    index: "./index.ts",
+    index: "./src/app/components/index.ts",
     PuckConfig: "./src/app/components/PuckConfig.tsx",
     DefaultFeatureList: "./src/app/components/DefaultFeatureList.tsx",
     FeaturesListCard: "./src/app/components/FeaturesListCard.tsx",
@@ -20,7 +21,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -33,10 +34,17 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
+        },
+      },
     ],
   },
-  externals: {
-    react: "react",
-    "react-dom": "react-dom",
-  },
+  externals: [nodeExternals()],
 };
