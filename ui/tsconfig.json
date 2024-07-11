@@ -12,7 +12,7 @@
     "jsx": "preserve",
     "incremental": true,
     "declaration": true, // IMPORTANT
-    "declarationDir": "./dist/@types",
+    "declarationDir": "./dist/@types", // IMPORTANT
     "stripInternal": true, // IMPORTANT
     "plugins": [
       {
